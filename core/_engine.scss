@@ -1,0 +1,15 @@
+// FONT SIZE GENERATOR
+@mixin font-size($size){
+    
+    font-size:$size / $root-font-size rem;
+    
+}
+
+
+// LIST ITEM
+@mixin list-item($numPerRow, $margin-right){
+        
+        width:(100% - (($numPerRow - 1) * $margin-right)) / $numPerRow; margin-right:$margin-right;
+        &:first-child(#{$numPerRow}n){margin-right:0;}
+    
+}

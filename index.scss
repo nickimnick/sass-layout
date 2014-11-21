@@ -1,0 +1,12 @@
+// CORE IMPORT
+@import 'core/_core';
+
+// CUSTOM CSS IMPORTS
+@import 'css/_main';
+
+// MEDIA QUERY IMPORTS
+@media screen and (max-width:900){
+ 
+    @import 'media/_screen-900'; 
+ 
+}

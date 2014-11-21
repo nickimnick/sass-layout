@@ -1,0 +1,12 @@
+// CUSTOM PLACEHOLDERS
+%error{@include font-size(12); color:#ff0000; font-weight:bold;}
+
+*{box-sizing:border-box;}
+.floatFixer{@extend %fixer;}
+
+.left{float:left;}
+.right{float:right;}
+.none{display:none;}
+.fixed {position:fixed;}
+
+.hata{@extend %error;}
