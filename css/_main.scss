@@ -10,3 +10,12 @@
 .fixed {position:fixed;}
 
 .hata{@extend %error;}
+
+.box{ @include list-item(5); }
+
+@include generate-icons{}
+
+.title{ @extend %font-size-xl; }
+
+
+.btnUyeGiris{@include get-sprite(53px -180px);}

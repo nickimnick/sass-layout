@@ -1,7 +1,27 @@
-// FONT SIZE GENERATOR
+// FONT SIZE
 @mixin font-size($size){
     
     font-size:$size / $root-font-size rem;
+    
+}
+
+// ICON GENERATOR
+@mixin generate-icons{
+    
+    .icon{background:url($icon-sprite-url) no-repeat;}
+    
+    @each $icon, $position in $icons{
+        
+        .icon-#{$icon}{background-position:$position;}
+        
+    }
+
+}
+
+// GET ICON
+@mixin get-sprite($position){
+    
+    background:url($icon-sprite-url) no-repeat $position;
     
 }
 

@@ -54,6 +54,26 @@ ul, li {
   position: fixed;
 }
 
+.icon {
+  background: url("sprite image path") no-repeat;
+}
+
+.icon-cart {
+  background-position: 0 0;
+}
+
+.icon-member {
+  background-position: 0 -50px;
+}
+
+.icon-yeni {
+  background-position: 100px 50px;
+}
+
+.btnUyeGiris {
+  background: url("sprite image path") no-repeat 53px -180px;
+}
+
 @media screen and (max-width: 900) {
   .box {
     width: 24.25%;
