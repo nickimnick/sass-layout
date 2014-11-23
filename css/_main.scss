@@ -1,7 +1,6 @@
 // CUSTOM PLACEHOLDERS
-%error{@include font-size(12); color:#ff0000; font-weight:bold;}
+%error{font:font(12, 1); color:#ff0000; font-weight:bold;}
 
-*{box-sizing:border-box;}
 .floatFixer{@extend %fixer;}
 
 .left{float:left;}
@@ -9,13 +8,13 @@
 .none{display:none;}
 .fixed {position:fixed;}
 
-.hata{@extend %error;}
-
-.box{ @include list-item(5); }
-
 @include generate-icons{}
+@include generate-buttons{}
 
-.title{ @extend %font-size-xl; }
 
 
-.btnUyeGiris{@include get-sprite(53px -180px);}
+// TEST
+.hata{@extend %error;}
+.box{ @include list-item(5, 1%); }
+.title{font:font(24, 3, bold); }
+.btnUyeGiris{@include get-icon(null, 53px -180px, 25px, 50px);}

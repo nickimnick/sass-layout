@@ -1,36 +1,36 @@
 // CORE IMPORT
-@import 'core/_core';
+@import 'core/core';
 
 // CUSTOM CSS IMPORTS
-@import 'css/_main';
+@import 'css/main';
 
 // MEDIA QUERY IMPORTS
 @media screen and (max-width:900){
  
-    @import 'media/_screen-900';
+    @import 'media/screen-900';
  
 }
 
 @media screen and (max-width:780){
  
-    @import 'media/_screen-780';
+    @import 'media/screen-780';
  
 }
 
 @media screen and (max-width:600){
  
-    @import 'media/_screen-600';
+    @import 'media/screen-600';
  
 }
 
 @media screen and (max-width:480){
  
-    @import 'media/_screen-480';
+    @import 'media/screen-480';
  
 }
 
 @media screen and (max-width:320){
  
-    @import 'media/_screen-320';
- 
+    @import 'media/screen-320';
+
 }

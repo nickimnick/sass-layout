@@ -1,14 +1,7 @@
-// FONT SIZE
-@mixin font-size($size){
-    
-    font-size:$size / $root-font-size rem;
-    
-}
-
 // ICON GENERATOR
 @mixin generate-icons{
     
-    .icon{background:url($icon-sprite-url) no-repeat;}
+    .icon{background:url($icon-sprite-path) no-repeat;}
     
     @each $icon, $position in $icons{
         
@@ -19,12 +12,39 @@
 }
 
 // GET ICON
-@mixin get-sprite($position){
-    
-    background:url($icon-sprite-url) no-repeat $position;
-    
+@mixin get-icon($sprite-path, $pos, $width, $height){
+	
+	width:$width;
+	height:$height;
+	
+	@if $sprite-path == null{
+		 $sprite-path:$icon-sprite-path;
+	}
+	
+	 backgroud:url($sprite-path) no-repeat $pos;
+	 
 }
 
+// BUTTON GENERATOR
+@mixin generate-buttons{
+    
+    @each $button in $button-types{
+        
+        .btn#{$button}{
+            
+            @extend %btn#{$button};
+            
+            span{
+               
+                @extend %btn#{$button}Span;
+              
+            }
+            
+        }
+        
+    }
+    
+}
 
 // LIST ITEM
 @mixin list-item($numPerRow, $margin-right){
