@@ -1,0 +1,41 @@
+// DEFAULT VARIABLES
+$d-site-max-width:1200px !default;
+$d-font-families:(1:'Arial', 2:'Helvetic', 3:'Tahoma') !default;
+$d-font-unit:'rem' !default;
+
+$c-root-font-size:12;
+$c-list-item:'box';
+$c-list-item-margin:1%;
+$c-list-item-numPerRow:4;
+$c-font-weight:'normal';
+$c-icon-sprite-path:"sprite image path";
+$c-icons:('cart':(0 0, 25px, 30px), 'member':(0 -50px, 15px, 43px), 'yeni':(100px 50px, 34px, 100px));
+$c-button-types:('Default', 'Alternate', 'Special');
+$c-button-font:'Arial';
+$c-sidebar-side:'left';
+$c-sidebar-width:250px;
+$c-sidebar:'sidebar';
+$c-main-col:'main-col';
+
+
+
+// DEFAULT FUNCTIONS
+
+    // Font Size //
+@function font($size, $family:$d-font-families, $weight:$c-font-weight){
+    
+    @return unquote($weight) $size/$c-root-font-size+unquote($d-font-unit) map-get($d-font-families, $family);
+    
+}
+
+
+// DEFAULT PLACEHOLDERS
+%fixer{width:100%; display:block; float:none; clear:both; height:0; font-size:0;}
+
+    // Definitions for $button-types //
+%btnDefault{display:inline-block; height:30px; line-height:30px; padding:0 15px; color:#fff; background:red; font:font(14, $c-button-font);}
+%btnDefaultSpan{color:#fff; font:font(14, $c-button-font);}
+%btnAlternate{display:inline-block; height:30px; line-height:30px; padding:0 15px; color:#fff; background:blue; font:font(18, $c-button-font);}
+%btnAlternateSpan{color:#fff; font:font(18, $c-button-font);}
+%btnSpecial{display:inline-block; height:20px; line-height:20px; padding:0 15px; color:#000; background:white; font:font(16, $c-button-font);}
+%btnSpecialSpan{color:#fff; font:font(16, $c-button-font);}

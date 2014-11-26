@@ -1,5 +1,5 @@
 // CUSTOM PLACEHOLDERS
-%error{font:font(12, 1); color:#ff0000; font-weight:bold;}
+%error{font:font(12, 1); color:#ff0000;}
 
 .floatFixer{@extend %fixer;}
 
@@ -8,13 +8,17 @@
 .none{display:none;}
 .fixed {position:fixed;}
 
+// DEFAULT CSS
 @include generate-icons{}
 @include generate-buttons{}
-
+@include with-sidebar{}
+.#{$c-list-item}{@include list-items;}
 
 
 // TEST
 .hata{@extend %error;}
-.box{ @include list-item(5, 1%); }
 .title{font:font(24, 3, bold); }
 .btnUyeGiris{@include get-icon(null, 53px -180px, 25px, 50px);}
+
+.osman{@extend .box;}
+.ozgur{@extend .box;}

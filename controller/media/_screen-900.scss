@@ -1,0 +1,7 @@
+.#{$c-list-item}{
+  $c-root-font-size:18;
+  @include list-items(3, 1%);
+
+  font:font(24, 3, bold);
+
+}

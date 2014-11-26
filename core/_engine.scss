@@ -1,11 +1,15 @@
 // ICON GENERATOR
 @mixin generate-icons{
     
-    .icon{background:url($icon-sprite-path) no-repeat;}
+    .icon{background:url($c-icon-sprite-path) no-repeat;}
     
-    @each $icon, $position in $icons{
+    @each $icon, $val in $c-icons{
         
-        .icon-#{$icon}{background-position:$position;}
+        .icon-#{unquote($icon)}{
+            background-position:nth($val, 1);
+            width:nth($val, 2);
+            height:nth($val, 3);
+        }
         
     }
 
@@ -18,7 +22,7 @@
 	height:$height;
 	
 	@if $sprite-path == null{
-		 $sprite-path:$icon-sprite-path;
+		 $sprite-path:$c-icon-sprite-path;
 	}
 	
 	 backgroud:url($sprite-path) no-repeat $pos;
@@ -28,15 +32,15 @@
 // BUTTON GENERATOR
 @mixin generate-buttons{
     
-    @each $button in $button-types{
+    @each $button in $c-button-types{
         
-        .btn#{$button}{
+        .btn#{unquote($button)}{
             
-            @extend %btn#{$button};
+            @extend %btn#{unquote($button)};
             
             span{
                
-                @extend %btn#{$button}Span;
+                @extend %btn#{unquote($button)}Span;
               
             }
             
@@ -46,10 +50,33 @@
     
 }
 
-// LIST ITEM
-@mixin list-item($numPerRow, $margin-right){
+// SIDEBAR SYSTEM
+@mixin with-sidebar($sidebar:$c-sidebar, $main-col:$c-main-col, $sidebar-width:$c-sidebar-width, $siderbar-side:$c-sidebar-side){
+    .#{unquote($sidebar)}{
+        float:unquote($siderbar-side);
+        width:$sidebar-width;
+    }
+    
+    .#{unquote($main-col)}{
+        margin-#{unquote($siderbar-side)}:$sidebar-width;
+        overflow:hidden;
+    }
+}
+
+// LIST ITEMS
+@mixin list-items($numPerRow:$c-list-item-numPerRow, $margin-right:$c-list-item-margin, $margin-bottom:$c-list-item-margin){
         
-        width:(100% - (($numPerRow - 1) * $margin-right)) / $numPerRow; margin-right:$margin-right;
-        &:first-child(#{$numPerRow}n){margin-right:0;}
+        width:(100% - (($numPerRow - 1) * $margin-right)) / $numPerRow;
+        
+        $margin-bottom:if($margin-bottom == null, $margin-right, $margin-bottom);
+        
+        &:nth-child(n) {
+          margin-bottom: $margin-bottom;
+          margin-right: $margin-right;
+        }
+        
+        &:nth-child(#{$numPerRow}n){
+            margin-right:0;
+        }
     
 }
