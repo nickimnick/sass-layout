@@ -155,7 +155,7 @@ ul, li {
 @media screen and (max-width: 900) {
   .box, .osman, .ozgur {
     width: 32.66667%;
-    font: bold 1.33333rem "Tahoma";
+    font: bold 2rem "Tahoma";
   }
   .box:nth-child(n), .osman:nth-child(n), .ozgur:nth-child(n) {
     margin-bottom: 1%;
